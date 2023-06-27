@@ -1,0 +1,37 @@
+<div class="background">
+  <mat-card class="login-form">
+    <mat-card-header>
+      <mat-card-title>
+        <h2 class="logi">Orlando Login</h2>
+
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="username" ngModel name="username" required>
+          <mat-error>
+            Please provide a valid Username
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="password" ngModel name="password" required>
+          <mat-error>
+            Please provide a valid password
+          </mat-error>
+        </mat-form-field>
+
+        <p></p>
+        <button type="button" mat-raised-button class="form-button" color="primary" routerLink="/agency/list"
+          *ngIf="!isAuthenticated">
+          Login
+        </button>
+        <button type="button" mat-raised-button class="form-button" color="primary" *ngIf="isAuthenticated"
+          (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          Logout
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
